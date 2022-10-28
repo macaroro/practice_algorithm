@@ -6,25 +6,36 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Binomial_Coefficient2 {
-	//이항계수(조합)
-	public static void main(String[] args) throws IOException {
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine()," ");
-		
-		int n = Integer.parseInt(st.nextToken());
-		int k = Integer.parseInt(st.nextToken());
-		
-		
-		int c = factorial(n) / (factorial(n - k) * factorial(k));
-		System.out.println(c%10007);
-		
-	}
 	
-	static int factorial(int a) {
-		if(a==0) return 1;
-		
-		return a*factorial(a-1);
+	static int[][] dp;
+	public static final int div = 10007;
+ 
+	public static void main(String[] args) throws IOException {
+ 
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+ 
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+ 
+		int N = Integer.parseInt(st.nextToken());
+		int K = Integer.parseInt(st.nextToken());
+ 
+		dp = new int[N + 1][K + 1];
+ 
+		System.out.println(BC(N, K));
+ 
 	}
-
+ 
+	static int BC(int n, int k) {
+ 
+	
+		if (dp[n][k] > 0) {
+			return dp[n][k];
+		}
+ 
+		if (k == 0 || n == k) {
+			return dp[n][k] = 1;
+		}
+ 
+		return dp[n][k] = (BC(n - 1, k - 1) + BC(n - 1, k)) % div;
+	}
 }
