@@ -12,7 +12,7 @@ public class GasStation {
 		StringTokenizer st;
 		
 		int city = Integer.parseInt(br.readLine());
-		
+		 
 		st = new StringTokenizer(br.readLine()," ");
 		int[] distance =new int[city-1];
 		
