@@ -18,6 +18,8 @@ public class Stack_Sequence {
 		int start = 0;
 		
 		// N ¹ø ¹Ýº¹
+		
+		
 		while(N -- > 0) {
 			
 			int value = Integer.parseInt(br.readLine());
