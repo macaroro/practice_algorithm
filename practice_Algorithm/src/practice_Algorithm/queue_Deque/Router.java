@@ -1,4 +1,4 @@
-package practice_Algorithm.queue_dex;
+package practice_Algorithm.queue_Deque;
 
 import java.util.*;
 import java.io.*;
