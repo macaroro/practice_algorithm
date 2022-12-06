@@ -8,19 +8,31 @@ public class Add_Number {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	    StringBuilder sb = new StringBuilder();
-		
 		int count = Integer.parseInt(br.readLine());
 		
+		//전의 코드
+//	    StringBuilder sb = new StringBuilder();
+//		
+//		
+//		int sum=0;
+//		
+//		for(byte num:br.readLine().getBytes()) {
+//			sum+=(num-'0');
+//		}
+//		
+//		System.out.println(sum);
+		
+		String str = br.readLine();
+		char[] c = str.toCharArray();
+		
 		int sum=0;
-		
-		for(byte num:br.readLine().getBytes()) {
-			sum+=(num-'0');
-			//숫자 0이 아스키 코드 48 그 이후로는 48+n....
-			//그러므로 입력한수의 아스키 코드를 받아서 -48하게 되면 입력한 수를 알수 있음
+		for(int i=0;i<count;i++) {
+			sum += c[i]-'0';
+			//0의 아스키 코드는 48 그 뒤로 1씩 증가 
+			//char 형태의 숫자를 int로 바꾸고 싶다면 원하는 숫자의 아스키 코드에 0의 아스키 코드를 빼면 됨
 		}
-		
 		System.out.println(sum);
+
 
 	}
 
