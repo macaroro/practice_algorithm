@@ -22,7 +22,12 @@ public class Intercal_Sum5 {
 			st = new StringTokenizer(br.readLine()," ");
 			for(int j=1; j<=size;j++) {
 				list[i][j]= list[i][j-1]+Integer.parseInt(st.nextToken());
-				//2차원 배열의 한줄씩 누적합을 배열에 저장
+//				2차원 배열의 한줄씩 누적합을 배열에 저장(가로로 저장)
+//				[[0, 0, 0, 0, 0], 
+//				[0, 1, 3, 6, 10],
+//				[0, 2, 5, 9, 14], 
+//				[0, 3, 7, 12, 18], 
+//				[0, 4, 9, 15, 22]]
 			}
 			
 		}
@@ -35,8 +40,10 @@ public class Intercal_Sum5 {
 			int x2 = Integer.parseInt(st.nextToken());
 			int y2 = Integer.parseInt(st.nextToken());
 			
-            for (int j = x1; j <= x2; j++) {
+            for (int j = x1; j <= x2; j++) {//x1에서 x2의 만큼의 반복하고 그 줄의 구간합끼리 더함
                 sum = sum + (list[j][y2] - list[j][y1-1]);
+                //만약 x1=2,y2=2/x2=3,y2=4라면 총 두번 반복
+                //그리고 첫번째 list[x1][y2(마지막 끝점)], list[x1][y1-](즉 list[2][2] 부터 list[2][4]까지의 구간합을 구하는것)
             }
             sb.append(sum + "\n");
         }
